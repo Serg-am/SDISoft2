@@ -40,8 +40,8 @@ public class WaterHeightCalculator {
                     visited[newRow][newCol] = true;
                     int height = Math.max(cell.height, heightMap[newRow][newCol]);
                     if (height > heightMap[newRow][newCol]) {
-                        // Если максимальная высота больше высоты текущей клетки, вычисляем высоту воды
-                        waterMap[newRow][newCol] = height - heightMap[newRow][newCol] + 1;
+                        // Устанавливаем максимальный уровень воды
+                        waterMap[newRow][newCol] = height;
                     }
                     queue.offer(new Cell(newRow, newCol, height));
                 }
